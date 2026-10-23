@@ -7,7 +7,7 @@
 <title>GYMPLAN — Training & Nutrition</title>
 <link rel="manifest" href="manifest.json">
 <style>
-:root{color-scheme:dark;--bg:#101116;--panel:#191b22;--panel2:#22252e;--line:#343844;--text:#f5f7fb;--muted:#a7afbd;--lime:#d9ff38;--red:#ff5968}
+:root{color-scheme:dark;--bg:#0b0d11;--panel:#141820;--panel2:#1b202a;--line:#2c3340;--text:#f4f6fa;--muted:#a2acbc;--lime:#d8ff32;--red:#ff6675;--radius:24px}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;transition:transform .15s ease,filter .15s ease}button:active{transform:scale(.98)}header{padding:24px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-size:25px;font-weight:900;letter-spacing:3px}.brand span{color:#8aa600}.subtitle{font-size:11px;letter-spacing:3px;color:var(--muted);margin-top:6px}.badge{background:var(--lime);color:#111;border-radius:18px;padding:17px;font-weight:900}.tabs{display:flex;gap:6px;overflow-x:auto;margin:0 14px 18px;padding:7px;background:#e9edf2;border-radius:20px;scrollbar-width:none}.tabs button{flex:0 0 auto;background:transparent;color:var(--muted);padding:14px 15px;border-radius:14px;font-size:12px;font-weight:900;letter-spacing:.5px}.tabs button.active{background:var(--lime);color:#10140a}main{padding:0 16px 50px;max-width:760px;margin:auto}.eyebrow{color:#718700;font-size:11px;font-weight:900;letter-spacing:3px;margin:22px 0 10px}h1{font-size:32px;margin:0 0 8px;line-height:1.1}h2{font-size:21px;margin:0 0 12px}p{color:var(--muted);line-height:1.5}.card{box-shadow:0 8px 26px rgba(30,45,70,.07);background:var(--panel);border:1px solid #e1e5eb;border-radius:20px;padding:18px;margin:14px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin:12px 0}.field label{display:block;color:var(--muted);font-size:13px;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;background:#fbfcfd;color:var(--text);border:1px solid #cbd2dc;border-radius:12px;padding:13px;outline:none}.field input:focus,.field select:focus{border-color:var(--lime)}.btn{background:var(--lime);color:#10140a;font-weight:900;border-radius:13px;padding:14px 18px}.btn.secondary{background:#edf0f4;color:var(--text);border:1px solid var(--line)}.btn.danger{background:#452126;color:#ffdadd}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.exercise{padding:13px 0;border-top:1px solid var(--line)}.exercise:first-child{border-top:0}.exercise strong{display:block}.small{font-size:12px;color:var(--muted)}.pill{display:inline-block;padding:6px 9px;border-radius:9px;background:#edf0f4;color:var(--muted);font-size:11px}.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#f0f3f7;border:1px solid #e2e6ed;border-radius:14px;padding:14px}.stat b{display:block;font-size:24px;color:var(--lime)}.hidden{display:none!important}.notice{border-left:3px solid var(--lime);padding:10px 12px;background:#f1f4f7;color:var(--muted);font-size:13px;line-height:1.5}.checkrow{display:flex;gap:10px;align-items:flex-start}.checkrow input{margin-top:4px;accent-color:var(--lime)}footer{text-align:center;padding:25px;color:#65717e;font-size:11px}
 @media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}.statgrid{grid-template-columns:repeat(4,1fr)}}
 .field select{min-height:48px}.card{overflow:hidden}.btn:focus-visible,button:focus-visible{outline:3px solid #8aa600;outline-offset:2px}.exercise{color:var(--text)}\n
@@ -24,6 +24,27 @@ table th,table td{border-color:#343844}
 hr{border-color:#343844}
 a{color:var(--lime)}
 option{background:#22252e;color:#f5f7fb}
+
+html{background:var(--bg)}
+body{background:radial-gradient(ellipse at 85% 0%,#1b222b 0%,#0b0d11 42%);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.015em}
+.tabs{background:#171b23;border:1px solid #282e39;border-radius:24px;box-shadow:0 12px 40px #0003}
+.tabs button{color:#aab3c2;border-radius:17px;font-weight:800;letter-spacing:.04em}
+.tabs button.active,.tabs button[aria-selected="true"]{background:var(--lime);color:#11140b}
+.card{background:linear-gradient(145deg,#171b23,#12151b);border:1px solid #2b313d;border-radius:28px;box-shadow:0 20px 60px #0002;color:var(--text)}
+.stat{background:linear-gradient(145deg,#202631,#191e27);border:1px solid #303847;border-radius:22px}
+.stat b,.metric b,.number,.accent{color:var(--lime)}
+h1,h2,h3,.brand,.page h1,.page h2,.page h3{color:#f7f8fb;letter-spacing:-.045em}
+.eyebrow{color:var(--lime);font-weight:900;letter-spacing:.22em}
+p,.small,.subtitle,.muted,label{color:var(--muted)}
+.field input,.field select,.field textarea,input,select,textarea{background:#10141b;color:#f4f6fa;border:1px solid #343c4a;border-radius:15px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--lime);outline-offset:1px;border-color:var(--lime)}
+button,.btn{border-radius:16px;font-weight:900;transition:transform .15s ease,filter .15s ease}
+button:active,.btn:active{transform:scale(.985)}
+.btn,.primary,button.primary{background:var(--lime);color:#11140b;border:0}
+button.secondary,.secondary{background:#222833;color:#f4f6fa;border:1px solid #343c4a}
+a{color:var(--lime)}
+hr,table th,table td{border-color:#2c3340}
+option{background:#10141b;color:#f4f6fa}
 
 </style>
 </head>
@@ -217,53 +238,43 @@ $('logForm').addEventListener('submit',e=>{e.preventDefault();logs.push({date:$(
 $('clearLogs').addEventListener('click',()=>{if(confirm('Удалить все записи тренировок?')){logs=[];write(KEYS.logs,logs);renderLogs();renderProgress()}});
 function renderNutrition(){
  const age=Number(profile.age),h=Number(profile.height),w=Number(profile.weight);
- if(!age||!h||!w){['calories','protein','fat','carbs'].forEach(k=>$(k).textContent='—');$('nutritionMsg').textContent='Заполни возраст, рост и вес в анкете.';return}
+ if(!age||!h||!w){
+  ['calories','protein','fat','carbs'].forEach(k=>$(k).textContent='—');
+  $('nutritionMsg').textContent='Сначала заполни возраст, рост и вес в анкете.';
+  return;
+ }
  const sex=profile.sex||'male';
  const bmr=10*w+6.25*h-5*age+(sex==='female'?-161:sex==='male'?5:-78);
  const activity=Number(profile.activity||1.55);
  const footballLoad=1+Math.min(0.12,(Number(profile.footballDays||0)*0.015)+(Number(profile.matches||0)*0.02));
  const maintenance=Math.round(bmr*activity*footballLoad);
- const target=$('nutritionGoal')?.value || (['recomp','fatloss','mass','fatgain'].includes(profile.goal)?profile.goal:'recomp');
+ const target=$('nutritionGoal')?.value || profile.goal || 'recomp';
+ // Always calculate a calorie number for every goal. Keep adjustments conservative.
  let kcal=maintenance;
- if(age>=18){
-  if(target==='fatloss') kcal=Math.round(maintenance*0.90);
-  if(target==='mass') kcal=Math.round(maintenance*1.08);
-  if(target==='fatgain') kcal=Math.round(maintenance*1.12);
-  if(target==='recomp') kcal=maintenance;
- } else {
-  // For minors, don't prescribe calorie deficits/surpluses.
-  kcal=maintenance;
- }
- // Goals update macros immediately. For under-18 users, calories remain at estimated
- // maintenance and the app avoids prescribing a deficit/surplus.
- let proteinPerKg;
- if(age<18){
-  proteinPerKg=target==='mass'?1.6:target==='fatloss'?1.3:target==='fatgain'?1.4:target==='maintain'?1.4:1.5;
- } else {
-  proteinPerKg=target==='fatloss'?1.8:target==='mass'?1.7:target==='fatgain'?1.5:target==='maintain'?1.4:1.6;
- }
- let fatPerKg=age<18?1.0:(target==='fatloss'?0.8:target==='mass'?0.9:target==='fatgain'?1.0:target==='maintain'?0.9:0.9);
- const protein=Math.round(w*proteinPerKg);
+ if(target==='fatloss') kcal=Math.round(maintenance*(age<18?0.97:0.90));
+ else if(target==='mass') kcal=Math.round(maintenance*(age<18?1.03:1.08));
+ else if(target==='fatgain') kcal=Math.round(maintenance*(age<18?1.04:1.12));
+ else if(target==='recomp') kcal=maintenance;
+ else if(target==='maintain') kcal=maintenance;
+ // Goal-specific macros; protein is at least 120 g for adults.
+ // For under-18 users, calorie intake stays at estimated maintenance.
+ let proteinPerKg=target==='fatloss'?1.8:target==='mass'?1.8:target==='fatgain'?1.6:target==='maintain'?1.6:1.7;
+ let protein=Math.round(w*proteinPerKg);
+ if(age>=18) protein=Math.max(120,protein);
+ else protein=Math.round(w*(target==='mass'?1.6:target==='fatloss'?1.3:1.4));
+ const fatPerKg=target==='fatloss'?0.8:target==='mass'?1.0:target==='fatgain'?1.1:target==='maintain'?0.9:0.9;
  const fat=Math.round(w*fatPerKg);
- const carbs=Math.max(0,Math.round((kcal-protein*4-fat*9)/4));
+ const remaining=Math.max(0,kcal-protein*4-fat*9);
+ const carbs=Math.round(remaining/4);
  $('calories').textContent=kcal.toLocaleString('ru-RU');
- $('protein').textContent=protein;$('fat').textContent=fat;$('carbs').textContent=carbs;
- const labels={recomp:'рекомпозиция',fatloss:'похудение',mass:'набор мышечной массы',fatgain:'набор жировой массы',maintain:'поддержание'};
- $('nutritionMsg').textContent=age<18
- ?`Цель: ${labels[target]||target}. Это ориентир, а не точная норма: в подростковом возрасте потребности меняются из-за роста и развития. Приложение не назначает дефицит/профицит калорий до 18 лет. Обсуди цель с врачом или спортивным диетологом.`
- :`Цель: ${labels[target]||target}. Поддержание ≈ ${maintenance.toLocaleString('ru-RU')} ккал с учётом активности и футбола. Коэффициенты целей: похудение −10%, рекомпозиция около поддержания, набор мышц +8%, набор жировой массы +12%. Это математическая оценка, не измерение обмена веществ; сверяй динамику 2–3 недели и не гонись за быстрым изменением веса.`;
+ $('protein').textContent=protein;
+ $('fat').textContent=fat;
+ $('carbs').textContent=carbs;
+ const labels={recomp:'рекомпозиция',fatloss:'снижение жира',mass:'набор мышечной массы',fatgain:'набор веса',maintain:'поддержание веса'};
+ $('nutritionMsg').textContent=(age<18
+  ? `Цель: ${labels[target]||target}. Для несовершеннолетних изменения калорий очень небольшие и являются только ориентиром; обсуди цель с врачом или спортивным диетологом. Показатели — ориентировочные; согласуй питание и количество белка с врачом или спортивным диетологом.`
+  : `Цель: ${labels[target]||target}. Калории и БЖУ пересчитаны по выбранной цели и данным анкеты. Это ориентир, а не медицинское назначение.`);
 }
-$('nutritionGoal')?.addEventListener('change',()=>{
- profile.goal=$('nutritionGoal').value;
- write(KEYS.profile,profile);
- renderNutrition();
- renderProgress();
-});
-if(profile.goal && $('nutritionGoal')) $('nutritionGoal').value=profile.goal;
-$('calcNutrition').addEventListener('click',renderNutrition);
-document.querySelectorAll('#anketa input,#anketa select,#anketa textarea').forEach(el=>{
- el.addEventListener('change',()=>{if(profile.age&&profile.height&&profile.weight)renderNutrition();});
-});
 function renderProgress(){$('totalLogs').textContent=logs.length;$('totalMinutes').textContent=logs.reduce((s,l)=>s+(Number(l.minutes)||0),0);$('currentWeight').textContent=weights.length?weights[weights.length-1].weight+' кг':(profile.weight?profile.weight+' кг':'—');$('goalStat').textContent=({strength:'Сила',speed:'Скорость',endurance:'Выносливость',mass:'Масса',fatloss:'Снижение жира',recomp:'Рекомпозиция',fatgain:'Набор жира'})[profile.goal]||'—';$('weights').innerHTML=weights.length?weights.slice().reverse().map(w=>`<div class="exercise">${escapeHtml(w.date)} — <strong>${w.weight} кг</strong></div>`).join(''):'<p class="small">Записей веса пока нет.</p>'}
 $('addWeight').addEventListener('click',()=>{const weight=Number($('weightEntry').value);if(!weight||weight<25||weight>250){alert('Введи корректный вес.');return}weights.push({date:$('weightDate').value||new Date().toISOString().slice(0,10),weight});weights.sort((a,b)=>a.date.localeCompare(b.date));write(KEYS.weights,weights);$('weightEntry').value='';renderProgress()});
 function download(filename,data){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
