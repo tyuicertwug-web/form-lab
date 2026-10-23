@@ -1,10 +1,10 @@
 {
-  "name": "FORM / LAB — персональный план тренировок",
-  "short_name": "FORM LAB",
+  "name": "IRON PLAN Football Performance",
+  "short_name": "IRON PLAN",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#0b0d12",
-  "theme_color": "#0b0d12",
+  "background_color": "#080b0e",
+  "theme_color": "#080b0e",
   "lang": "ru",
-  "description": "Персональный план тренировок"
+  "description": "Большая анкета футболиста, программы по позициям, дневник тренировок и расчёт КБЖУ"
 }
