@@ -1,10 +1,10 @@
-# IRON PLAN — исправленная версия
+# IRON PLAN V4 — Football + Strength Goals
 
-## Публикация на GitHub Pages с iPhone
-1. Открой репозиторий и выбери `Add file` → `Upload files`.
-2. Загрузи файлы `index.html`, `manifest.json`, `icon.svg` из этой папки в корень репозитория (не загружай саму папку).
-3. Подтверди `Commit changes` в ветку `main`.
-4. Открой `https://tyuicertwug-web.github.io/form-lab/?v=3` в Safari и обнови страницу.
+1. Upload `index.html`, `manifest.json`, and `icon.svg` to the root of the GitHub Pages repository, replacing existing files.
+2. Commit changes to `main`.
+3. Open `https://tyuicertwug-web.github.io/form-lab/?v=4` in Safari and refresh.
+4. To install on iPhone: Safari Share → Add to Home Screen.
 
-## Важно
-Это статическое приложение. Анкета, дневник и вес хранятся локально в браузере. Google-вход и облачная синхронизация не подключены. Питание рассчитано приблизительно. Упражнения намеренно не содержат приседаний, становой тяги и румынской тяги.
+Includes football position routines, goal-specific training blocks, bench press/biceps/triceps/back/chest/shoulders/legs options, training diary, progress tracking, local backup and activity-aware KБЖУ estimate.
+
+Safety: intentionally excludes squats, deadlifts and Romanian deadlifts. Nutrition numbers are estimates, not medical advice; extra caution for users under 18. Data stays in this browser; no cloud account or Google sign-in is configured.
