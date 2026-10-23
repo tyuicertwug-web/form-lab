@@ -1,16 +1,9 @@
 {
-  "name": "IRON PLAN",
-  "short_name": "IRON PLAN",
-  "start_url": "./?v=4",
+  "name": "GYMPLAN",
+  "short_name": "GYMPLAN",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#080b0e",
-  "theme_color": "#080b0e",
-  "icons": [
-    {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
+  "background_color": "#f5f6f8",
+  "theme_color": "#f5f6f8",
+  "description": "Персональный план тренировок и расчёт питания"
 }
