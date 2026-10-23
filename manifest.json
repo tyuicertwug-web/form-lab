@@ -1,10 +1,9 @@
 {
-  "name": "IRON PLAN Football Performance",
+  "name": "IRON PLAN — Football Performance System",
   "short_name": "IRON PLAN",
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#080b0e",
   "theme_color": "#080b0e",
-  "lang": "ru",
-  "description": "Большая анкета футболиста, программы по позициям, дневник тренировок и расчёт КБЖУ"
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }
