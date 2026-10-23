@@ -1,0 +1,10 @@
+{
+  "name": "FORM / LAB — персональный план тренировок",
+  "short_name": "FORM LAB",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12",
+  "lang": "ru",
+  "description": "Персональный план тренировок"
+}
