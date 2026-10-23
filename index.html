@@ -8,7 +8,7 @@
 <link rel="manifest" href="manifest.json">
 <style>
 :root{--bg:#080b0e;--panel:#121820;--panel2:#19212b;--line:#26313d;--text:#f2f5f7;--muted:#9aa6b4;--lime:#d9ff38;--red:#ff7474}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}header{padding:24px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-size:25px;font-weight:900;letter-spacing:3px}.brand span{color:var(--lime)}.subtitle{font-size:11px;letter-spacing:3px;color:var(--muted);margin-top:6px}.badge{background:var(--lime);color:#111;border-radius:18px;padding:17px;font-weight:900}.tabs{display:flex;gap:6px;overflow-x:auto;margin:0 14px 18px;padding:7px;background:var(--panel);border-radius:20px;scrollbar-width:none}.tabs button{flex:0 0 auto;background:transparent;color:var(--muted);padding:14px 15px;border-radius:14px;font-size:12px;font-weight:900;letter-spacing:.5px}.tabs button.active{background:var(--lime);color:#10140a}main{padding:0 16px 50px;max-width:760px;margin:auto}.eyebrow{color:var(--lime);font-size:11px;font-weight:900;letter-spacing:3px;margin:22px 0 10px}h1{font-size:32px;margin:0 0 8px;line-height:1.1}h2{font-size:21px;margin:0 0 12px}p{color:var(--muted);line-height:1.5}.card{background:var(--panel);border:1px solid #1c2631;border-radius:20px;padding:18px;margin:14px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin:12px 0}.field label{display:block;color:var(--muted);font-size:13px;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;background:#0b1016;color:var(--text);border:1px solid #33404d;border-radius:12px;padding:13px;outline:none}.field input:focus,.field select:focus{border-color:var(--lime)}.btn{background:var(--lime);color:#10140a;font-weight:900;border-radius:13px;padding:14px 18px}.btn.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}.btn.danger{background:#452126;color:#ffdadd}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.exercise{padding:13px 0;border-top:1px solid var(--line)}.exercise:first-child{border-top:0}.exercise strong{display:block}.small{font-size:12px;color:var(--muted)}.pill{display:inline-block;padding:6px 9px;border-radius:9px;background:#26313d;color:var(--muted);font-size:11px}.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:var(--panel2);border-radius:14px;padding:14px}.stat b{display:block;font-size:24px;color:var(--lime)}.hidden{display:none!important}.notice{border-left:3px solid var(--lime);padding:10px 12px;background:#161e24;color:var(--muted);font-size:13px;line-height:1.5}.checkrow{display:flex;gap:10px;align-items:flex-start}.checkrow input{margin-top:4px;accent-color:var(--lime)}footer{text-align:center;padding:25px;color:#65717e;font-size:11px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;transition:transform .15s ease,filter .15s ease}button:active{transform:scale(.98)}header{padding:24px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-size:25px;font-weight:900;letter-spacing:3px}.brand span{color:var(--lime)}.subtitle{font-size:11px;letter-spacing:3px;color:var(--muted);margin-top:6px}.badge{background:var(--lime);color:#111;border-radius:18px;padding:17px;font-weight:900}.tabs{display:flex;gap:6px;overflow-x:auto;margin:0 14px 18px;padding:7px;background:var(--panel);border-radius:20px;scrollbar-width:none}.tabs button{flex:0 0 auto;background:transparent;color:var(--muted);padding:14px 15px;border-radius:14px;font-size:12px;font-weight:900;letter-spacing:.5px}.tabs button.active{background:var(--lime);color:#10140a}main{padding:0 16px 50px;max-width:760px;margin:auto}.eyebrow{color:var(--lime);font-size:11px;font-weight:900;letter-spacing:3px;margin:22px 0 10px}h1{font-size:32px;margin:0 0 8px;line-height:1.1}h2{font-size:21px;margin:0 0 12px}p{color:var(--muted);line-height:1.5}.card{box-shadow:0 10px 28px rgba(0,0,0,.12);background:var(--panel);border:1px solid #1c2631;border-radius:20px;padding:18px;margin:14px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin:12px 0}.field label{display:block;color:var(--muted);font-size:13px;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;background:#0b1016;color:var(--text);border:1px solid #33404d;border-radius:12px;padding:13px;outline:none}.field input:focus,.field select:focus{border-color:var(--lime)}.btn{background:var(--lime);color:#10140a;font-weight:900;border-radius:13px;padding:14px 18px}.btn.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}.btn.danger{background:#452126;color:#ffdadd}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.exercise{padding:13px 0;border-top:1px solid var(--line)}.exercise:first-child{border-top:0}.exercise strong{display:block}.small{font-size:12px;color:var(--muted)}.pill{display:inline-block;padding:6px 9px;border-radius:9px;background:#26313d;color:var(--muted);font-size:11px}.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:var(--panel2);border-radius:14px;padding:14px}.stat b{display:block;font-size:24px;color:var(--lime)}.hidden{display:none!important}.notice{border-left:3px solid var(--lime);padding:10px 12px;background:#161e24;color:var(--muted);font-size:13px;line-height:1.5}.checkrow{display:flex;gap:10px;align-items:flex-start}.checkrow input{margin-top:4px;accent-color:var(--lime)}footer{text-align:center;padding:25px;color:#65717e;font-size:11px}
 @media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}.statgrid{grid-template-columns:repeat(4,1fr)}}
 </style>
 </head>
@@ -26,11 +26,11 @@
 <div class="field"><label for="age">Возраст</label><input id="age" type="number" min="10" max="100" placeholder="лет"></div>
 <div class="field"><label for="height">Рост, см</label><input id="height" type="number" min="100" max="240" placeholder="см"></div>
 <div class="field"><label for="weight">Вес, кг</label><input id="weight" type="number" min="25" max="250" placeholder="кг"></div>
-<div class="field"><label for="goal">Главная цель</label><select id="goal"><option value="strength">Сила и мышцы</option><option value="speed">Скорость и взрывная сила</option><option value="endurance">Выносливость</option><option value="mass">Набор массы</option><option value="fatloss">Снижение жира</option></select></div>
+<div class="field"><label for="goal">Главная цель</label><select id="goal"><option value="strength">Сила и мышцы</option><option value="speed">Скорость и взрывная сила</option><option value="endurance">Выносливость</option><option value="recomp">Рекомпозиция тела</option><option value="mass">Набор мышечной массы</option><option value="fatloss">Похудение</option><option value="fatgain">Набор жировой массы</option></select></div>
 <div class="field"><label for="position">Футбольная позиция</label><select id="position"><option>Вратарь</option><option>Центральный защитник</option><option>Крайний защитник</option><option>Опорный полузащитник</option><option>Центральный полузащитник</option><option>Атакующий полузащитник</option><option>Вингер</option><option>Нападающий</option></select></div>
 <div class="field"><label for="experience">Опыт в зале</label><select id="experience"><option>Новичок</option><option>Средний</option><option>Продвинутый</option></select></div>
 <div class="field"><label for="days">Силовых тренировок в неделю</label><select id="days"><option>2</option><option selected>3</option><option>4</option><option>5</option></select></div>
-<div class="field"><label for="duration">Время на тренировку</label><select id="duration"><option>45 минут</option><option>60 минут</option><option selected>90 минут</option></select></div>
+<div class="field"><label for="duration">Время на тренировку</label><select id="duration"><option>60 минут</option><option>75 минут</option><option selected>90 минут</option><option>120 минут</option></select></div>
 </div>
 <div class="field"><label for="equipment">Оборудование</label><select id="equipment"><option>Полный тренажёрный зал</option><option>Гантели и тренажёры</option><option>Минимальное оборудование</option></select></div>
 <div class="grid">
@@ -50,7 +50,13 @@
 
 <section id="plan" class="page hidden">
 <div class="eyebrow">02 / ТВОЯ ПРОГРАММА</div><h1>План тренировок</h1><p id="planIntro">Сначала заполни анкету, чтобы персонализировать план.</p>
-<div class="row"><button class="btn" id="makePlan">СОСТАВИТЬ ПЛАН</button><button class="btn secondary" id="toSurvey">Изменить анкету</button></div>
+<div class="card">
+<div class="field"><label for="muscleFocus">Что тренировать в этом плане?</label><select id="muscleFocus">
+<option value="football">Футбол + всё тело</option><option value="full">Всё тело</option><option value="upper">Верх тела</option><option value="lower">Низ тела (без приседаний и тяг)</option><option value="chest">Грудь</option><option value="back">Спина</option><option value="shoulders">Плечи</option><option value="biceps">Бицепс</option><option value="triceps">Трицепс</option><option value="arms">Бицепс + трицепс</option><option value="core">Пресс и корпус</option><option value="push">Жимовые мышцы: грудь/плечи/трицепс</option><option value="pull">Тяговые мышцы: спина/бицепс</option>
+</select></div>
+<div class="row"><button class="btn" id="makePlan">СОСТАВИТЬ ПЛАН</button><button class="btn secondary" id="refreshPlan" type="button">ОБНОВИТЬ НА ЭТУ НЕДЕЛЮ</button><button class="btn secondary" id="toSurvey">Изменить анкету</button></div>
+<p class="small" id="weekInfo">Вариант программы меняется по неделям. Кнопка создаёт следующий вариант вручную.</p>
+</div>
 <div id="planContent"></div>
 </section>
 
@@ -66,7 +72,7 @@
 
 <section id="nutrition" class="page hidden">
 <div class="eyebrow">04 / ПИТАНИЕ</div><h1>Калории и КБЖУ</h1><p>Оценка для ориентира, не медицинское назначение. Для несовершеннолетних не используй агрессивный дефицит калорий.</p>
-<div class="card"><div class="statgrid"><div class="stat"><span class="small">Калории</span><b id="calories">—</b><span class="small">ккал/день</span></div><div class="stat"><span class="small">Белки</span><b id="protein">—</b><span class="small">г/день</span></div><div class="stat"><span class="small">Жиры</span><b id="fat">—</b><span class="small">г/день</span></div><div class="stat"><span class="small">Углеводы</span><b id="carbs">—</b><span class="small">г/день</span></div></div><div class="row" style="margin-top:16px"><button class="btn" id="calcNutrition">РАССЧИТАТЬ ПО АНКЕТЕ</button></div><p id="nutritionMsg" class="small"></p></div>
+<div class="card"><div class="field"><label for="nutritionGoal">Цель питания</label><select id="nutritionGoal"><option value="recomp">Рекомпозиция</option><option value="fatloss">Похудение</option><option value="mass">Набор мышечной массы</option><option value="fatgain">Набор жировой массы</option><option value="maintain">Поддержание веса</option></select></div><div class="statgrid"><div class="stat"><span class="small">Калории</span><b id="calories">—</b><span class="small">ккал/день</span></div><div class="stat"><span class="small">Белки</span><b id="protein">—</b><span class="small">г/день</span></div><div class="stat"><span class="small">Жиры</span><b id="fat">—</b><span class="small">г/день</span></div><div class="stat"><span class="small">Углеводы</span><b id="carbs">—</b><span class="small">г/день</span></div></div><div class="row" style="margin-top:16px"><button class="btn" id="calcNutrition">РАССЧИТАТЬ ПО АНКЕТЕ</button></div><p id="nutritionMsg" class="small"></p></div>
 </section>
 
 <section id="progress" class="page hidden">
@@ -111,17 +117,68 @@ $('surveyForm').addEventListener('submit',e=>{e.preventDefault();['name','age','
 $('resetSurvey').addEventListener('click',()=>{if(confirm('Сбросить анкету?')){$('surveyForm').reset();profile={};write(KEYS.profile,profile);$('surveyMsg').textContent='Анкета сброшена.'}});
 $('toSurvey').addEventListener('click',()=>showTab('survey'));
 const routines={
-'Вратарь':[['Разминка на велотренажёре','8 мин'],['Жим ногами в тренажёре','3 × 8–12'],['Сгибание ног сидя','3 × 10–12'],['Подъёмы на носки','3 × 12–15'],['Жим гантелей лёжа','3 × 8–12'],['Тяга верхнего блока','3 × 8–12'],['Сгибание рук с гантелями на бицепс','3 × 10–15'],['Разгибание рук на блоке','2 × 10–15'],['Pallof press','3 × 10 на сторону'],['Боковая планка','3 × 30 сек']],
+'Вратарь':[['Разминка: ходьба на дорожке или динамическая мобильность','8–10 мин'],['Жим ногами в тренажёре','3 × 8–12'],['Сгибание ног сидя','3 × 10–12'],['Подъёмы на носки','3 × 12–15'],['Жим гантелей лёжа','3 × 8–12'],['Тяга верхнего блока','3 × 8–12'],['Сгибание рук с гантелями на бицепс','3 × 10–15'],['Разгибание рук на блоке','2 × 10–15'],['Pallof press','3 × 10 на сторону'],['Боковая планка','3 × 30 сек']],
 'Центральный защитник':[['Разминка + динамическая мобильность','10 мин'],['Жим ногами в тренажёре','3 × 8–10'],['Болгарский сплит-присед без веса или с опорой','2 × 8 на ногу'],['Сгибание ног сидя','3 × 10–12'],['Жим гантелей лёжа','3 × 8–12'],['Горизонтальная тяга блока','3 × 10–12'],['Сгибание рук на бицепс','3 × 10–15'],['Pallof press','3 × 10 на сторону'],['Прыжки на невысокую платформу (если техника освоена)','3 × 4']],
 'Крайний защитник':[['Разминка + динамические ускорения','10 мин'],['Степ-ап на низкую платформу','3 × 8 на ногу'],['Сгибание ног сидя','3 × 10–12'],['Ягодичный мост','3 × 10–12'],['Тяга верхнего блока','3 × 8–12'],['Жим гантелей на наклонной скамье','3 × 8–12'],['Подъёмы на носки','3 × 12–15'],['Планка','3 × 30–45 сек']],
 'Опорный полузащитник':[['Разминка + мобильность','10 мин'],['Жим ногами в тренажёре','3 × 8–12'],['Ягодичный мост','3 × 10–12'],['Сгибание ног сидя','3 × 10–12'],['Горизонтальная тяга блока','3 × 10–12'],['Жим гантелей лёжа','3 × 8–12'],['Pallof press','3 × 10 на сторону'],['Фермерская прогулка с гантелями','3 × 30 м']],
-'Центральный полузащитник':[['Разминка + мобильность','10 мин'],['Степ-ап на низкую платформу','3 × 8 на ногу'],['Жим ногами в тренажёре','3 × 10'],['Ягодичный мост','3 × 12'],['Тяга верхнего блока','3 × 10'],['Жим гантелей лёжа','3 × 10'],['Dead bug','3 × 10 на сторону'],['Велотренажёр в умеренном темпе','8–12 мин']],
+'Центральный полузащитник':[['Разминка + мобильность','10 мин'],['Степ-ап на низкую платформу','3 × 8 на ногу'],['Жим ногами в тренажёре','3 × 10'],['Ягодичный мост','3 × 12'],['Тяга верхнего блока','3 × 10'],['Жим гантелей лёжа','3 × 10'],['Dead bug','3 × 10 на сторону'],['Быстрая ходьба на дорожке в умеренном темпе','8–12 мин']],
 'Атакующий полузащитник':[['Разминка + координация','10 мин'],['Степ-ап на низкую платформу','3 × 8 на ногу'],['Сгибание ног сидя','3 × 10–12'],['Ягодичный мост','3 × 10–12'],['Жим гантелей на наклонной скамье','3 × 8–12'],['Горизонтальная тяга блока','3 × 10–12'],['Броски лёгкого медбола (если есть техника)','3 × 5'],['Dead bug','3 × 10 на сторону']],
 'Вингер':[['Разминка + техника ускорения','10 мин'],['Степ-ап на низкую платформу','3 × 8 на ногу'],['Ягодичный мост','3 × 10–12'],['Сгибание ног сидя','3 × 10–12'],['Подъёмы на носки','3 × 12–15'],['Жим гантелей лёжа','3 × 8–12'],['Тяга верхнего блока','3 × 10'],['Планка боковая','3 × 25–40 сек']],
 'Нападающий':[['Разминка + координация','10 мин'],['Жим ногами в тренажёре','3 × 8–10'],['Степ-ап на низкую платформу','3 × 8 на ногу'],['Сгибание ног сидя','3 × 10–12'],['Ягодичный мост','3 × 10–12'],['Жим гантелей лёжа','3 × 8–12'],['Горизонтальная тяга блока','3 × 10–12'],['Сгибание рук на бицепс','3 × 10–15'],['Pallof press','3 × 10 на сторону']]
 };
-function makePlan(){if(!profile.position){$('planIntro').textContent='Сначала заполни анкету и сохрани её.';return}const ex=routines[profile.position]||routines['Центральный полузащитник'];$('planIntro').textContent=`Позиция: ${profile.position} · приоритет: ${{strength:'сила и мышцы',acceleration:'ускорение',topSpeed:'максимальная скорость',agility:'ловкость',endurance:'выносливость',jump:'прыжок',duels:'единоборства',core:'корпус',upper:'верх тела',recovery:'восстановление'}[profile.weak]||profile.weak||'общая подготовка'} · ${profile.days||3} силовых занятий в неделю · ${profile.duration||'90 минут'}. Начинай с комфортного веса и оставляй 2–3 повтора в запасе.`;let html='';for(let d=1;d<=Math.min(Number(profile.days||3),4);d++){html+=`<div class="card"><div class="eyebrow">ТРЕНИРОВКА ${d}</div><h2>${d===1?'Сила и база':d===2?'Одноногие движения и корпус':d===3?'Верх тела и стабильность':'Лёгкая общая подготовка'}</h2>`;ex.forEach((x,i)=>{let item=x;if(d===2&&i===0)item=['Велотренажёр + мобильность','8–10 мин'];if(d===2&&i===1)item=['Сплит-присед с опорой или степ-ап','2–3 × 8 на ногу'];html+=`<div class="exercise"><div class="checkrow"><input type="checkbox" aria-label="Отметить выполненным"><div><strong>${item[0]}</strong><span class="small">${item[1]}</span></div></div></div>`});html+='<div class="exercise"><div class="checkrow"><input type="checkbox" aria-label="Отметить выполненным"><div><strong>Сгибание рук с гантелями на бицепс</strong><span class="small">2–3 × 10–15 · дополнительный блок рук</span></div></div></div>';html+='<p class="small">Отдых между рабочими подходами: 60–120 секунд. Если есть боль, прекрати упражнение и обсуди ограничения со специалистом.</p></div>'}$('planContent').innerHTML=html;}
+
+let manualWeek=0;
+const focusExercises={
+ full:[['Жим ногами в тренажёре','3–4 × 8–12'],['Жим лёжа или жим гантелей','4 × 6–10'],['Тяга верхнего блока','4 × 8–12'],['Сгибание ног сидя','3 × 10–15'],['Горизонтальная тяга с опорой грудью','3 × 8–12'],['Сгибание рук на бицепс','3 × 10–15'],['Разгибание рук на блоке','3 × 10–15'],['Подъёмы на носки','3 × 12–20'],['Dead bug','3 × 10 на сторону']],
+ upper:[['Жим лёжа','4 × 6–10'],['Тяга верхнего блока','4 × 8–12'],['Жим гантелей на наклонной скамье','3 × 8–12'],['Горизонтальная тяга с опорой грудью','3 × 8–12'],['Подъёмы гантелей в стороны','3 × 12–20'],['Сгибание рук на бицепс','3 × 10–15'],['Разгибание рук на блоке','3 × 10–15'],['Обратная бабочка','2–3 × 12–15']],
+ lower:[['Жим ногами в комфортной амплитуде','4 × 8–12'],['Сгибание ног сидя','4 × 10–15'],['Ягодичный мост','4 × 8–12'],['Степ-ап на низкую платформу с опорой','3 × 8 на ногу'],['Разгибание ног в тренажёре','3 × 10–15'],['Подъёмы на носки','4 × 12–20'],['Pallof press','3 × 10 на сторону']],
+ chest:[['Жим лёжа','4 × 6–10'],['Жим гантелей на наклонной скамье','4 × 8–12'],['Сведение рук в тренажёре','3 × 12–15'],['Отжимания с контролем','3 × 8–15'],['Тяга горизонтального блока для баланса','3 × 10–12'],['Разгибание рук на блоке','3 × 10–15']],
+ back:[['Тяга верхнего блока','4 × 8–12'],['Горизонтальная тяга с опорой грудью','4 × 8–12'],['Тяга гантели одной рукой с опорой','3 × 10 на сторону'],['Обратная бабочка','3 × 12–15'],['Face pull','3 × 12–15'],['Сгибание рук на бицепс','3 × 10–15']],
+ shoulders:[['Жим гантелей сидя, комфортный вес','3–4 × 8–12'],['Подъёмы гантелей в стороны','4 × 12–20'],['Обратная бабочка','3 × 12–15'],['Face pull','3 × 12–15'],['Жим лёжа лёгкий/умеренный','3 × 8–12'],['Разгибание рук на блоке','2 × 12–15']],
+ biceps:[['Сгибание рук с гантелями','4 × 8–12'],['Сгибание на скамье Скотта/в тренажёре','3 × 10–12'],['Молотковые сгибания','3 × 10–15'],['Сгибание на нижнем блоке','3 × 12–15'],['Тяга верхнего блока нейтральным хватом','3 × 8–12']],
+ triceps:[['Разгибание рук на верхнем блоке','4 × 10–15'],['Разгибание руки из-за головы на блоке','3 × 10–15'],['Жим узким хватом в тренажёре','3 × 8–12'],['Отжимания от высокой опоры','2–3 × 8–15']],
+ arms:[['Сгибание рук с гантелями','3 × 8–12'],['Разгибание рук на блоке','3 × 10–15'],['Молотковые сгибания','3 × 10–15'],['Разгибание рук из-за головы на блоке','3 × 10–15'],['Сгибание на скамье Скотта','2–3 × 10–12']],
+ core:[['Dead bug','3 × 10 на сторону'],['Pallof press','3 × 10–12 на сторону'],['Боковая планка','3 × 20–45 сек на сторону'],['Планка','3 × 30–60 сек'],['Фермерская прогулка','4 × 20–30 м'],['Bird dog','3 × 10 на сторону']],
+ push:[['Жим лёжа','4 × 6–10'],['Жим гантелей на наклонной скамье','3 × 8–12'],['Жим гантелей сидя','3 × 8–12'],['Подъёмы гантелей в стороны','3 × 12–20'],['Сведение рук в тренажёре','3 × 12–15'],['Разгибание рук на блоке','3 × 10–15']],
+ pull:[['Тяга верхнего блока','4 × 8–12'],['Горизонтальная тяга с опорой грудью','4 × 8–12'],['Тяга гантели одной рукой с опорой','3 × 10 на сторону'],['Обратная бабочка','3 × 12–15'],['Сгибание рук на бицепс','3 × 10–15'],['Молотковые сгибания','2 × 12–15']]
+};
+function weekNumber(){return Math.floor((Date.now()-new Date(new Date().getFullYear(),0,1).getTime())/(7*86400000))+1;}
+function makePlan(){
+ if(!profile.position){$('planIntro').textContent='Сначала заполни анкету и сохрани её.';return}
+ const focus=$('muscleFocus')?.value||'football';
+ const week=weekNumber()+manualWeek;
+ const variation=(week+manualWeek)%3;
+ const football=routines[profile.position]||routines['Центральный полузащитник'];
+ let chosen=focus==='football'?football:(focusExercises[focus]||focusExercises.full);
+ chosen=chosen.map(x=>[...x]);
+ if(variation===1 && chosen.length>4) chosen.push(['Face pull или обратная бабочка','2–3 × 12–15']);
+ if(variation===2 && chosen.length>5) chosen.push(['Фермерская прогулка или Pallof press','3 подхода']);
+ const days=Math.min(Number(profile.days||3),5);
+ const duration=parseInt(profile.duration,10)||90;
+ const names=focus==='football'?'Футбол + всё тело':({full:'Всё тело',upper:'Верх тела',lower:'Низ тела',chest:'Грудь',back:'Спина',shoulders:'Плечи',biceps:'Бицепс',triceps:'Трицепс',arms:'Бицепс + трицепс',core:'Пресс и корпус',push:'Жимовые мышцы',pull:'Тяговые мышцы'})[focus]||'Всё тело';
+ const rotation=[
+  ['База и сила','Умеренно тяжёлые рабочие подходы'],
+  ['Объём и контроль','Чуть больше повторений, опускание веса под контролем'],
+  ['Техника и восстановление','Уменьши рабочий вес на 5–10%, если накопилась усталость']
+ ];
+ $('planIntro').textContent=`Неделя ${week} · ${names} · ${profile.position} · ${days} силовых занятий · до ${duration} минут. Вариант ${variation+1}/3.`;
+ let out=`<div class="card"><div class="eyebrow">НЕДЕЛЯ ${week} · ВАРИАНТ ${variation+1}/3</div><h2>${rotation[variation][0]}</h2><p>${rotation[variation][1]}. Разминка 8–12 минут: ходьба на дорожке и динамическая мобильность. Ходьба на дорожкеа в программе нет.</p><p class="small">Прогрессия: оставляй 2–3 повтора в запасе. Когда верхняя граница повторений даётся чисто во всех подходах, добавь минимальный шаг веса. Не тренируйся через боль.</p></div>`;
+ for(let d=1;d<=days;d++){
+  let session=chosen.filter((x,i)=> i%days===d-1);
+  if(session.length<3) session=chosen.slice((d-1)*Math.max(3,Math.ceil(chosen.length/days)),d*Math.max(3,Math.ceil(chosen.length/days)));
+  if(!session.length) session=chosen.slice(0,Math.min(5,chosen.length));
+  out+=`<div class="card"><div class="eyebrow">ТРЕНИРОВКА ${d} ИЗ ${days}</div><h2>${focus==='football'?(['Сила и база','Одноногие движения + корпус','Верх тела и стабильность','Общая сила','Техника и профилактика'][d-1]||'Силовая подготовка'):names+' · сессия '+d}</h2>`;
+  out+=`<div class="exercise"><strong>Разминка: быстрая ходьба + динамическая мобильность</strong><span class="small">8–12 минут</span></div>`;
+  session.forEach((x,i)=>{let sets=x[1];if(variation===1) sets=sets.replace(/3 ×/,'4 ×');if(variation===2) sets=sets.replace(/4 ×/,'3 ×');out+=`<div class="exercise"><label class="checkrow"><input type="checkbox" aria-label="Отметить выполненным"><span><strong>${x[0]}</strong><span class="small">${sets} · отдых 60–150 сек</span></span></label></div>`});
+  out+=`<div class="exercise"><strong>Заминка и заметки</strong><span class="small">5 минут лёгкой ходьбы/мобильности. Общая длительность с отдыхом: примерно ${Math.min(duration,session.length*9+18)}–${duration} минут.</span></div><button class="btn secondary" type="button" data-log-session="${d}" data-session-title="${names} — тренировка ${d}">Записать тренировку в дневник</button><p class="small">Если футбольная тренировка или матч были тяжёлыми, уменьши объём силовой работы.</p></div>`;
+ }
+ $('planContent').innerHTML=out;
+ $('planContent').querySelectorAll('[data-log-session]').forEach(b=>b.addEventListener('click',()=>{logs.push({date:new Date().toISOString().slice(0,10),title:b.dataset.sessionTitle,minutes:duration,notes:`План недели ${week}; фокус: ${names}`});write(KEYS.logs,logs);renderProgress();alert('Тренировка добавлена в дневник.');}));
+ $('weekInfo').textContent=`Показана неделя ${week}. Нажми «Обновить на эту неделю», чтобы переключить вариант программы. Данные профиля и дневника сохраняются.`;
+}
 $('makePlan').addEventListener('click',makePlan);
+$('refreshPlan').addEventListener('click',()=>{manualWeek++;makePlan();});
+
 const goalBlocks={
 bench:{title:'Жим лёжа',intro:'Тренируй 1–2 раза в неделю, между тяжёлыми сессиями оставляй не менее 48 часов.',ex:[['Жим лёжа со штангой или тренажёрный жим','4 × 5–8'],['Жим гантелей на наклонной скамье','3 × 8–10'],['Отжимания','3 × 8–15'],['Тяга горизонтального блока','3 × 8–12'],['Разгибание рук на блоке','2–3 × 10–15']]},
 biceps:{title:'Бицепс',intro:'Оставляй 1–3 повтора в запасе. Не раскачивай корпус.',ex:[['Сгибание рук с гантелями','3 × 8–12'],['Сгибание рук на скамье Скотта или в тренажёре','3 × 10–12'],['Молотковые сгибания','2–3 × 10–15'],['Тяга верхнего блока нейтральным хватом','3 × 8–12']]},
@@ -133,7 +190,7 @@ chest:{title:'Грудь',intro:'Сохраняй контроль опуска�
 legs:{title:'Сила ног без приседаний и становой тяги',intro:'Используем тренажёры и одноногие варианты с опорой. При боли в колене/спине остановись.',ex:[['Жим ногами в комфортной амплитуде','3 × 8–12'],['Сгибание ног сидя','3 × 10–12'],['Ягодичный мост','3 × 10–12'],['Степ-ап на низкую платформу','2–3 × 8 на ногу'],['Подъёмы на носки','3 × 12–15']]},
 speed:{title:'Ускорение для футбола',intro:'Делай свежим, не после тяжёлой тренировки ног и не ближе чем за 24–48 ч до матча.',ex:[['Динамическая разминка','8–10 мин'],['Ускорения 5–10 м с полным отдыхом','4–6 повторов'],['Старт из разных положений','3 × 2 повтора'],['Подъёмы на носки','3 × 12'],['Pallof press','3 × 10 на сторону']]},
 agility:{title:'Ловкость',intro:'Качество движений важнее скорости выполнения.',ex:[['Разминка и торможение на малой скорости','8 мин'],['Перемещения в стороны','3 × 10–15 м'],['Плановые смены направления','4–6 коротких повторов'],['Баланс на одной ноге','3 × 20–30 сек на сторону'],['Pallof press','3 × 10 на сторону']]},
-endurance:{title:'Выносливость',intro:'Учитывай командные тренировки и матчи, чтобы не накапливать лишнюю усталость.',ex:[['Велотренажёр или бег в разговорном темпе','15–25 мин'],['Интервалы умеренной интенсивности','6 × 1 мин, отдых 1 мин'],['Dead bug','3 × 10 на сторону']]},
+endurance:{title:'Выносливость',intro:'Учитывай командные тренировки и матчи, чтобы не накапливать лишнюю усталость.',ex:[['Быстрая ходьба на дорожке или лёгкий бег в разговорном темпе','15–25 мин'],['Интервалы умеренной интенсивности','6 × 1 мин, отдых 1 мин'],['Dead bug','3 × 10 на сторону']]},
 jump:{title:'Прыжок',intro:'Только при отсутствии боли и с хорошим приземлением. Остановись при ухудшении техники.',ex:[['Разминка и лёгкие прыжки на месте','5–8 мин'],['Прыжок вверх с мягким приземлением','3 × 3'],['Прыжок в длину с места','3 × 3'],['Подъёмы на носки','3 × 12'],['Ягодичный мост','3 × 10']]}
 };
 $('buildGoal').addEventListener('click',()=>{const b=goalBlocks[$('goalType').value];const weeks=Number($('goalWeeks').value);const level=$('goalLevel').value;const load=Number($('goalLoad').value);let progression=level==='beginner'?'Недели 1–2: освой технику и оставляй 3 повтора в запасе.':level==='intermediate'?'Недели 1–2: оставляй 2 повтора в запасе; если все подходы уверенные, добавь 1 повтор.':'Недели 1–2: работай строго без отказа; добавляй нагрузку только при стабильной технике.';
@@ -144,16 +201,40 @@ function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;',
 $('logDate').value=new Date().toISOString().slice(0,10);$('weightDate').value=new Date().toISOString().slice(0,10);
 $('logForm').addEventListener('submit',e=>{e.preventDefault();logs.push({date:$('logDate').value,title:$('logTitle').value,minutes:Number($('logMinutes').value),notes:$('logNotes').value});write(KEYS.logs,logs);$('logTitle').value='';$('logNotes').value='';renderLogs();renderProgress()});
 $('clearLogs').addEventListener('click',()=>{if(confirm('Удалить все записи тренировок?')){logs=[];write(KEYS.logs,logs);renderLogs();renderProgress()}});
-function renderNutrition(){const age=Number(profile.age),h=Number(profile.height),w=Number(profile.weight);if(!age||!h||!w){['calories','protein','fat','carbs'].forEach(k=>$(k).textContent='—');$('nutritionMsg').textContent='Заполни возраст, рост и вес в анкете.';return}
-const sex=profile.sex||'male';const bmr=10*w+6.25*h-5*age+(sex==='female'?-161:sex==='male'?5:-78);
-const factor=Number(profile.activity||1.55);let kcal=Math.round(bmr*factor);
-if(profile.goal==='mass'&&age>=18)kcal+=200;
-if(profile.goal==='fatloss'&&age>=18)kcal-=250;
-const protein=Math.round(w*(age<18?1.4:1.6));const fat=Math.round(w*(age<18?1.0:0.9));const carbs=Math.max(0,Math.round((kcal-protein*4-fat*9)/4));
-$('calories').textContent=kcal.toLocaleString('ru-RU');$('protein').textContent=protein;$('fat').textContent=fat;$('carbs').textContent=carbs;
-$('nutritionMsg').textContent=age<18?'Оценка приблизительная: у подростков потребность зависит от роста, пубертата и спортивной нагрузки. Не используй дефицит калорий и не ограничивай питание без врача/спортивного диетолога.':'Расчёт использует формулу Миффлина—Сан Жеора и выбранный коэффициент активности; это оценка, а не точное измерение. Сверяйся с энергией, восстановлением и динамикой за 2–3 недели; при заболеваниях или особых целях обратись к специалисту.'}
+function renderNutrition(){
+ const age=Number(profile.age),h=Number(profile.height),w=Number(profile.weight);
+ if(!age||!h||!w){['calories','protein','fat','carbs'].forEach(k=>$(k).textContent='—');$('nutritionMsg').textContent='Заполни возраст, рост и вес в анкете.';return}
+ const sex=profile.sex||'male';
+ const bmr=10*w+6.25*h-5*age+(sex==='female'?-161:sex==='male'?5:-78);
+ const activity=Number(profile.activity||1.55);
+ const footballLoad=1+Math.min(0.12,(Number(profile.footballDays||0)*0.015)+(Number(profile.matches||0)*0.02));
+ const maintenance=Math.round(bmr*activity*footballLoad);
+ const target=$('nutritionGoal')?.value || (['recomp','fatloss','mass','fatgain'].includes(profile.goal)?profile.goal:'recomp');
+ let kcal=maintenance;
+ if(age>=18){
+  if(target==='fatloss') kcal=Math.round(maintenance*0.90);
+  if(target==='mass') kcal=Math.round(maintenance*1.08);
+  if(target==='fatgain') kcal=Math.round(maintenance*1.12);
+  if(target==='recomp') kcal=maintenance;
+ } else {
+  // For minors, don't prescribe calorie deficits/surpluses.
+  kcal=maintenance;
+ }
+ let proteinPerKg=age<18?1.4:target==='fatloss'?1.8:target==='mass'?1.7:target==='fatgain'?1.5:1.6;
+ let fatPerKg=age<18?1.0:Math.max(0.8,Math.min(1.0,0.9));
+ const protein=Math.round(w*proteinPerKg);
+ const fat=Math.round(w*fatPerKg);
+ const carbs=Math.max(0,Math.round((kcal-protein*4-fat*9)/4));
+ $('calories').textContent=kcal.toLocaleString('ru-RU');
+ $('protein').textContent=protein;$('fat').textContent=fat;$('carbs').textContent=carbs;
+ const labels={recomp:'рекомпозиция',fatloss:'похудение',mass:'набор мышечной массы',fatgain:'набор жировой массы',maintain:'поддержание'};
+ $('nutritionMsg').textContent=age<18
+ ?`Цель: ${labels[target]||target}. Это ориентир, а не точная норма: в подростковом возрасте потребности меняются из-за роста и развития. Приложение не назначает дефицит/профицит калорий до 18 лет. Обсуди цель с врачом или спортивным диетологом.`
+ :`Цель: ${labels[target]||target}. Поддержание ≈ ${maintenance.toLocaleString('ru-RU')} ккал с учётом активности и футбола. Коэффициенты целей: похудение −10%, рекомпозиция около поддержания, набор мышц +8%, набор жировой массы +12%. Это математическая оценка, не измерение обмена веществ; сверяй динамику 2–3 недели и не гонись за быстрым изменением веса.`;
+}
+$('nutritionGoal')?.addEventListener('change',renderNutrition);
 $('calcNutrition').addEventListener('click',renderNutrition);
-function renderProgress(){$('totalLogs').textContent=logs.length;$('totalMinutes').textContent=logs.reduce((s,l)=>s+(Number(l.minutes)||0),0);$('currentWeight').textContent=weights.length?weights[weights.length-1].weight+' кг':(profile.weight?profile.weight+' кг':'—');$('goalStat').textContent=({strength:'Сила',speed:'Скорость',endurance:'Выносливость',mass:'Масса',fatloss:'Снижение жира'})[profile.goal]||'—';$('weights').innerHTML=weights.length?weights.slice().reverse().map(w=>`<div class="exercise">${escapeHtml(w.date)} — <strong>${w.weight} кг</strong></div>`).join(''):'<p class="small">Записей веса пока нет.</p>'}
+function renderProgress(){$('totalLogs').textContent=logs.length;$('totalMinutes').textContent=logs.reduce((s,l)=>s+(Number(l.minutes)||0),0);$('currentWeight').textContent=weights.length?weights[weights.length-1].weight+' кг':(profile.weight?profile.weight+' кг':'—');$('goalStat').textContent=({strength:'Сила',speed:'Скорость',endurance:'Выносливость',mass:'Масса',fatloss:'Снижение жира',recomp:'Рекомпозиция',fatgain:'Набор жира'})[profile.goal]||'—';$('weights').innerHTML=weights.length?weights.slice().reverse().map(w=>`<div class="exercise">${escapeHtml(w.date)} — <strong>${w.weight} кг</strong></div>`).join(''):'<p class="small">Записей веса пока нет.</p>'}
 $('addWeight').addEventListener('click',()=>{const weight=Number($('weightEntry').value);if(!weight||weight<25||weight>250){alert('Введи корректный вес.');return}weights.push({date:$('weightDate').value||new Date().toISOString().slice(0,10),weight});weights.sort((a,b)=>a.date.localeCompare(b.date));write(KEYS.weights,weights);$('weightEntry').value='';renderProgress()});
 function download(filename,data){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 function backup(){download('iron-plan-backup.json',{profile,logs,weights})}
