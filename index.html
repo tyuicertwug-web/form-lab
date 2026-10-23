@@ -3,14 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f7f8fa">
+<meta name="theme-color" content="#111318">
 <title>GYMPLAN — Training & Nutrition</title>
 <link rel="manifest" href="manifest.json">
 <style>
-:root{--bg:#f5f6f8;--panel:#ffffff;--panel2:#edf0f4;--line:#d9dee6;--text:#171a20;--muted:#626b78;--lime:#d9ff38;--red:#d93645}
+:root{color-scheme:dark;--bg:#101116;--panel:#191b22;--panel2:#22252e;--line:#343844;--text:#f5f7fb;--muted:#a7afbd;--lime:#d9ff38;--red:#ff5968}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;transition:transform .15s ease,filter .15s ease}button:active{transform:scale(.98)}header{padding:24px 18px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-size:25px;font-weight:900;letter-spacing:3px}.brand span{color:#8aa600}.subtitle{font-size:11px;letter-spacing:3px;color:var(--muted);margin-top:6px}.badge{background:var(--lime);color:#111;border-radius:18px;padding:17px;font-weight:900}.tabs{display:flex;gap:6px;overflow-x:auto;margin:0 14px 18px;padding:7px;background:#e9edf2;border-radius:20px;scrollbar-width:none}.tabs button{flex:0 0 auto;background:transparent;color:var(--muted);padding:14px 15px;border-radius:14px;font-size:12px;font-weight:900;letter-spacing:.5px}.tabs button.active{background:var(--lime);color:#10140a}main{padding:0 16px 50px;max-width:760px;margin:auto}.eyebrow{color:#718700;font-size:11px;font-weight:900;letter-spacing:3px;margin:22px 0 10px}h1{font-size:32px;margin:0 0 8px;line-height:1.1}h2{font-size:21px;margin:0 0 12px}p{color:var(--muted);line-height:1.5}.card{box-shadow:0 8px 26px rgba(30,45,70,.07);background:var(--panel);border:1px solid #e1e5eb;border-radius:20px;padding:18px;margin:14px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin:12px 0}.field label{display:block;color:var(--muted);font-size:13px;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;background:#fbfcfd;color:var(--text);border:1px solid #cbd2dc;border-radius:12px;padding:13px;outline:none}.field input:focus,.field select:focus{border-color:var(--lime)}.btn{background:var(--lime);color:#10140a;font-weight:900;border-radius:13px;padding:14px 18px}.btn.secondary{background:#edf0f4;color:var(--text);border:1px solid var(--line)}.btn.danger{background:#452126;color:#ffdadd}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.exercise{padding:13px 0;border-top:1px solid var(--line)}.exercise:first-child{border-top:0}.exercise strong{display:block}.small{font-size:12px;color:var(--muted)}.pill{display:inline-block;padding:6px 9px;border-radius:9px;background:#edf0f4;color:var(--muted);font-size:11px}.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#f0f3f7;border:1px solid #e2e6ed;border-radius:14px;padding:14px}.stat b{display:block;font-size:24px;color:var(--lime)}.hidden{display:none!important}.notice{border-left:3px solid var(--lime);padding:10px 12px;background:#f1f4f7;color:var(--muted);font-size:13px;line-height:1.5}.checkrow{display:flex;gap:10px;align-items:flex-start}.checkrow input{margin-top:4px;accent-color:var(--lime)}footer{text-align:center;padding:25px;color:#65717e;font-size:11px}
 @media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}.statgrid{grid-template-columns:repeat(4,1fr)}}
-.field select{min-height:48px}.card{overflow:hidden}.btn:focus-visible,button:focus-visible{outline:3px solid #8aa600;outline-offset:2px}.exercise{color:var(--text)}\n</style>
+.field select{min-height:48px}.card{overflow:hidden}.btn:focus-visible,button:focus-visible{outline:3px solid #8aa600;outline-offset:2px}.exercise{color:var(--text)}\n
+/* GYMPLAN dark theme overrides */
+body{background:var(--bg);color:var(--text)}
+.tabs{background:#20232b}
+.card{background:var(--panel);border-color:var(--line);color:var(--text)}
+.stat,.field input,.field select,.field textarea,input,select,textarea{background:#22252e;color:var(--text);border-color:#3a3f4c}
+input::placeholder,textarea::placeholder{color:#8c95a4}
+label,.small,.subtitle,.muted,p{color:var(--muted)}
+.page h1,.page h2,.page h3,.brand,.field label{color:#f5f7fb}
+button.secondary,.secondary{background:#292d37;color:#f5f7fb;border:1px solid #414654}
+table th,table td{border-color:#343844}
+hr{border-color:#343844}
+a{color:var(--lime)}
+option{background:#22252e;color:#f5f7fb}
+
+</style>
 </head>
 <body>
 <header><div><div class="brand">GYM<span>PLAN</span></div><div class="subtitle">TRAINING · NUTRITION · PROGRESS</div></div><div class="badge">GP</div></header>
@@ -219,8 +234,15 @@ function renderNutrition(){
   // For minors, don't prescribe calorie deficits/surpluses.
   kcal=maintenance;
  }
- let proteinPerKg=age<18?1.4:target==='fatloss'?1.8:target==='mass'?1.7:target==='fatgain'?1.5:1.6;
- let fatPerKg=age<18?1.0:Math.max(0.8,Math.min(1.0,0.9));
+ // Goals update macros immediately. For under-18 users, calories remain at estimated
+ // maintenance and the app avoids prescribing a deficit/surplus.
+ let proteinPerKg;
+ if(age<18){
+  proteinPerKg=target==='mass'?1.6:target==='fatloss'?1.3:target==='fatgain'?1.4:target==='maintain'?1.4:1.5;
+ } else {
+  proteinPerKg=target==='fatloss'?1.8:target==='mass'?1.7:target==='fatgain'?1.5:target==='maintain'?1.4:1.6;
+ }
+ let fatPerKg=age<18?1.0:(target==='fatloss'?0.8:target==='mass'?0.9:target==='fatgain'?1.0:target==='maintain'?0.9:0.9);
  const protein=Math.round(w*proteinPerKg);
  const fat=Math.round(w*fatPerKg);
  const carbs=Math.max(0,Math.round((kcal-protein*4-fat*9)/4));
@@ -239,6 +261,9 @@ $('nutritionGoal')?.addEventListener('change',()=>{
 });
 if(profile.goal && $('nutritionGoal')) $('nutritionGoal').value=profile.goal;
 $('calcNutrition').addEventListener('click',renderNutrition);
+document.querySelectorAll('#anketa input,#anketa select,#anketa textarea').forEach(el=>{
+ el.addEventListener('change',()=>{if(profile.age&&profile.height&&profile.weight)renderNutrition();});
+});
 function renderProgress(){$('totalLogs').textContent=logs.length;$('totalMinutes').textContent=logs.reduce((s,l)=>s+(Number(l.minutes)||0),0);$('currentWeight').textContent=weights.length?weights[weights.length-1].weight+' кг':(profile.weight?profile.weight+' кг':'—');$('goalStat').textContent=({strength:'Сила',speed:'Скорость',endurance:'Выносливость',mass:'Масса',fatloss:'Снижение жира',recomp:'Рекомпозиция',fatgain:'Набор жира'})[profile.goal]||'—';$('weights').innerHTML=weights.length?weights.slice().reverse().map(w=>`<div class="exercise">${escapeHtml(w.date)} — <strong>${w.weight} кг</strong></div>`).join(''):'<p class="small">Записей веса пока нет.</p>'}
 $('addWeight').addEventListener('click',()=>{const weight=Number($('weightEntry').value);if(!weight||weight<25||weight>250){alert('Введи корректный вес.');return}weights.push({date:$('weightDate').value||new Date().toISOString().slice(0,10),weight});weights.sort((a,b)=>a.date.localeCompare(b.date));write(KEYS.weights,weights);$('weightEntry').value='';renderProgress()});
 function download(filename,data){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
