@@ -46,6 +46,20 @@ a{color:var(--lime)}
 hr,table th,table td{border-color:#2c3340}
 option{background:#10141b;color:#f4f6fa}
 
+
+/* V10 responsive layout fixes */
+*{box-sizing:border-box}
+img,svg,canvas{max-width:100%}
+input,select,textarea,button{max-width:100%;font:inherit}
+.card,.exercise{min-width:0;overflow-wrap:anywhere}
+.stat-grid,.stats-grid,.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:560px){
+ .stat-grid,.stats-grid,.grid{grid-template-columns:minmax(0,1fr)}
+ .tabs{gap:5px;overflow-x:auto}
+ .tabs button{white-space:nowrap;flex:0 0 auto}
+ h1{font-size:clamp(2rem,8vw,3.2rem)}
+ .card{padding:20px}
+}
 </style>
 </head>
 <body>
@@ -87,7 +101,7 @@ option{background:#10141b;color:#f4f6fa}
 <div class="eyebrow">02 / ТВОЯ ПРОГРАММА</div><h1>План тренировок</h1><p id="planIntro">Сначала заполни анкету, чтобы персонализировать план.</p>
 <div class="card">
 <div class="field"><label for="muscleFocus">Что тренировать в этом плане?</label><select id="muscleFocus">
-<option value="football">Футбол + всё тело</option><option value="full">Всё тело</option><option value="upper">Верх тела</option><option value="lower">Низ тела (без приседаний и тяг)</option><option value="chest">Грудь</option><option value="back">Спина</option><option value="shoulders">Плечи</option><option value="biceps">Бицепс</option><option value="triceps">Трицепс</option><option value="arms">Бицепс + трицепс</option><option value="core">Пресс и корпус</option><option value="push">Жимовые мышцы: грудь/плечи/трицепс</option><option value="pull">Тяговые мышцы: спина/бицепс</option>
+<option value="full" selected>Зал: всё тело</option><option value="football">Футбол + всё тело</option><option value="upper">Верх тела</option><option value="lower">Низ тела (без приседаний и тяг)</option><option value="chest">Грудь</option><option value="back">Спина</option><option value="shoulders">Плечи</option><option value="biceps">Бицепс</option><option value="triceps">Трицепс</option><option value="arms">Бицепс + трицепс</option><option value="core">Пресс и корпус</option><option value="push">Жимовые мышцы: грудь/плечи/трицепс</option><option value="pull">Тяговые мышцы: спина/бицепс</option>
 </select></div>
 <div class="row"><button class="btn" id="makePlan">СОСТАВИТЬ ПЛАН</button><button class="btn secondary" id="refreshPlan" type="button">ОБНОВИТЬ НА ЭТУ НЕДЕЛЮ</button><button class="btn secondary" id="toSurvey">Изменить анкету</button></div>
 <p class="small" id="weekInfo">Вариант программы меняется по неделям. Кнопка создаёт следующий вариант вручную.</p>
@@ -180,7 +194,7 @@ const focusExercises={
 function weekNumber(){return Math.floor((Date.now()-new Date(new Date().getFullYear(),0,1).getTime())/(7*86400000))+1;}
 function makePlan(){
  if(!profile.position){$('planIntro').textContent='Сначала заполни анкету и сохрани её.';return}
- const focus=$('muscleFocus')?.value||'football';
+ const focus=$('muscleFocus')?.value||'full';
  const week=weekNumber()+manualWeek;
  const variation=(week+manualWeek)%3;
  const football=routines[profile.position]||routines['Центральный полузащитник'];
@@ -188,8 +202,8 @@ function makePlan(){
  chosen=chosen.map(x=>[...x]);
  if(variation===1 && chosen.length>4) chosen.push(['Face pull или обратная бабочка','2–3 × 12–15']);
  if(variation===2 && chosen.length>5) chosen.push(['Фермерская прогулка или Pallof press','3 подхода']);
- const days=Math.min(Number(profile.days||3),5);
- const duration=parseInt(profile.duration,10)||90;
+ const days=Math.min(Number(profile.days||4),5);
+ const duration=Math.max(60,parseInt(profile.duration,10)||90);
  const names=focus==='football'?'Футбол + всё тело':({full:'Всё тело',upper:'Верх тела',lower:'Низ тела',chest:'Грудь',back:'Спина',shoulders:'Плечи',biceps:'Бицепс',triceps:'Трицепс',arms:'Бицепс + трицепс',core:'Пресс и корпус',push:'Жимовые мышцы',pull:'Тяговые мышцы'})[focus]||'Всё тело';
  const rotation=[
   ['База и сила','Умеренно тяжёлые рабочие подходы'],
@@ -197,7 +211,7 @@ function makePlan(){
   ['Техника и восстановление','Уменьши рабочий вес на 5–10%, если накопилась усталость']
  ];
  $('planIntro').textContent=`Неделя ${week} · ${names} · ${profile.position} · ${days} силовых занятий · до ${duration} минут. Вариант ${variation+1}/3.`;
- let out=`<div class="card"><div class="eyebrow">НЕДЕЛЯ ${week} · ВАРИАНТ ${variation+1}/3</div><h2>${rotation[variation][0]}</h2><p>${rotation[variation][1]}. Разминка 8–12 минут: ходьба на дорожке и динамическая мобильность. Ходьба на дорожкеа в программе нет.</p><p class="small">Прогрессия: оставляй 2–3 повтора в запасе. Когда верхняя граница повторений даётся чисто во всех подходах, добавь минимальный шаг веса. Не тренируйся через боль.</p></div>`;
+ let out=`<div class="card"><div class="eyebrow">НЕДЕЛЯ ${week} · ВАРИАНТ ${variation+1}/3</div><h2>${rotation[variation][0]}</h2><p>${rotation[variation][1]}. Разминка 8–12 минут: лёгкий эллипс или динамическая мобильность. Основной акцент — силовая работа в зале; футбол остаётся дополнительной нагрузкой.</p><p class="small">Прогрессия: оставляй 2–3 повтора в запасе. Когда верхняя граница повторений даётся чисто во всех подходах, добавь минимальный шаг веса. Не тренируйся через боль.</p></div>`;
  for(let d=1;d<=days;d++){
   let session=chosen.filter((x,i)=> i%days===d-1);
   if(session.length<3) session=chosen.slice((d-1)*Math.max(3,Math.ceil(chosen.length/days)),d*Math.max(3,Math.ceil(chosen.length/days)));
@@ -237,43 +251,42 @@ $('logDate').value=new Date().toISOString().slice(0,10);$('weightDate').value=ne
 $('logForm').addEventListener('submit',e=>{e.preventDefault();logs.push({date:$('logDate').value,title:$('logTitle').value,minutes:Number($('logMinutes').value),notes:$('logNotes').value});write(KEYS.logs,logs);$('logTitle').value='';$('logNotes').value='';renderLogs();renderProgress()});
 $('clearLogs').addEventListener('click',()=>{if(confirm('Удалить все записи тренировок?')){logs=[];write(KEYS.logs,logs);renderLogs();renderProgress()}});
 function renderNutrition(){
- const age=Number(profile.age),h=Number(profile.height),w=Number(profile.weight);
+ const age=Number(profile.age), h=Number(profile.height), w=Number(profile.weight);
  if(!age||!h||!w){
-  ['calories','protein','fat','carbs'].forEach(k=>$(k).textContent='—');
-  $('nutritionMsg').textContent='Сначала заполни возраст, рост и вес в анкете.';
+  ['calories','protein','fat','carbs'].forEach(k=>{if($(k))$(k).textContent='—';});
+  if($('nutritionMsg'))$('nutritionMsg').textContent='Сначала заполни анкету: возраст, рост, вес, пол и активность.';
   return;
  }
- const sex=profile.sex||'male';
- const bmr=10*w+6.25*h-5*age+(sex==='female'?-161:sex==='male'?5:-78);
- const activity=Number(profile.activity||1.55);
- const footballLoad=1+Math.min(0.12,(Number(profile.footballDays||0)*0.015)+(Number(profile.matches||0)*0.02));
- const maintenance=Math.round(bmr*activity*footballLoad);
  const target=$('nutritionGoal')?.value || profile.goal || 'recomp';
- // Always calculate a calorie number for every goal. Keep adjustments conservative.
- let kcal=maintenance;
- if(target==='fatloss') kcal=Math.round(maintenance*(age<18?0.97:0.90));
- else if(target==='mass') kcal=Math.round(maintenance*(age<18?1.03:1.08));
- else if(target==='fatgain') kcal=Math.round(maintenance*(age<18?1.04:1.12));
- else if(target==='recomp') kcal=maintenance;
- else if(target==='maintain') kcal=maintenance;
- // Goal-specific macros; protein is at least 120 g for adults.
- // For under-18 users, calorie intake stays at estimated maintenance.
- let proteinPerKg=target==='fatloss'?1.8:target==='mass'?1.8:target==='fatgain'?1.6:target==='maintain'?1.6:1.7;
- let protein=Math.round(w*proteinPerKg);
+ profile.goal=target;
+ const sex=profile.sex||'male';
+ // Базовый обмен по Mifflin–St Jeor, затем умножение на активность из анкеты.
+ const bmr=10*w+6.25*h-5*age+(sex==='female'?-161:5);
+ let activity=Number(profile.activity);
+ if(!Number.isFinite(activity)||activity<1.1||activity>2.2) activity=1.55;
+ const footballDays=Math.max(0,Number(profile.footballDays)||0);
+ const matches=Math.max(0,Number(profile.matches)||0);
+ const sportFactor=1+Math.min(.12,footballDays*.012+matches*.015);
+ const baseCalories=Math.round(bmr*activity*sportFactor);
+ // Цель применяется только после расчёта индивидуальной базовой потребности.
+ const goalAdjust={fatloss:-0.10,recomp:0,maintain:0,mass:0.08,fatgain:0.10};
+ const adjustment=age<18?0:(goalAdjust[target]??0);
+ const kcal=Math.round(baseCalories*(1+adjustment));
+ const proteinFactor={fatloss:1.8,recomp:1.8,maintain:1.6,mass:1.8,fatgain:1.6};
+ let protein=Math.round(w*(proteinFactor[target]||1.7));
  if(age>=18) protein=Math.max(120,protein);
- else protein=Math.round(w*(target==='mass'?1.6:target==='fatloss'?1.3:1.4));
- const fatPerKg=target==='fatloss'?0.8:target==='mass'?1.0:target==='fatgain'?1.1:target==='maintain'?0.9:0.9;
- const fat=Math.round(w*fatPerKg);
- const remaining=Math.max(0,kcal-protein*4-fat*9);
- const carbs=Math.round(remaining/4);
+ else protein=Math.round(w*(target==='mass'?1.6:1.4));
+ const fatFactor={fatloss:.8,recomp:.9,maintain:.9,mass:1,fatgain:1};
+ const fat=Math.round(w*(fatFactor[target]||.9));
+ const carbs=Math.max(0,Math.round((kcal-protein*4-fat*9)/4));
  $('calories').textContent=kcal.toLocaleString('ru-RU');
  $('protein').textContent=protein;
  $('fat').textContent=fat;
  $('carbs').textContent=carbs;
  const labels={recomp:'рекомпозиция',fatloss:'снижение жира',mass:'набор мышечной массы',fatgain:'набор веса',maintain:'поддержание веса'};
- $('nutritionMsg').textContent=(age<18
-  ? `Цель: ${labels[target]||target}. Для несовершеннолетних изменения калорий очень небольшие и являются только ориентиром; обсуди цель с врачом или спортивным диетологом. Показатели — ориентировочные; согласуй питание и количество белка с врачом или спортивным диетологом.`
-  : `Цель: ${labels[target]||target}. Калории и БЖУ пересчитаны по выбранной цели и данным анкеты. Это ориентир, а не медицинское назначение.`);
+ const delta=Math.round((kcal-baseCalories));
+ $('nutritionMsg').textContent=`База по анкете: ${baseCalories.toLocaleString('ru-RU')} ккал/день. Цель «${labels[target]||target}»: ${delta>0?'+':''}${delta} ккал/день. Итог: ${kcal.toLocaleString('ru-RU')} ккал. ${age<18?'До 18 лет целевая прибавка или снижение не применяются автоматически; обсуди питание со специалистом.':'Оценка ориентировочная, а не медицинское назначение.'}`;
+ write(KEYS.profile,profile);
 }
 function renderProgress(){$('totalLogs').textContent=logs.length;$('totalMinutes').textContent=logs.reduce((s,l)=>s+(Number(l.minutes)||0),0);$('currentWeight').textContent=weights.length?weights[weights.length-1].weight+' кг':(profile.weight?profile.weight+' кг':'—');$('goalStat').textContent=({strength:'Сила',speed:'Скорость',endurance:'Выносливость',mass:'Масса',fatloss:'Снижение жира',recomp:'Рекомпозиция',fatgain:'Набор жира'})[profile.goal]||'—';$('weights').innerHTML=weights.length?weights.slice().reverse().map(w=>`<div class="exercise">${escapeHtml(w.date)} — <strong>${w.weight} кг</strong></div>`).join(''):'<p class="small">Записей веса пока нет.</p>'}
 $('addWeight').addEventListener('click',()=>{const weight=Number($('weightEntry').value);if(!weight||weight<25||weight>250){alert('Введи корректный вес.');return}weights.push({date:$('weightDate').value||new Date().toISOString().slice(0,10),weight});weights.sort((a,b)=>a.date.localeCompare(b.date));write(KEYS.weights,weights);$('weightEntry').value='';renderProgress()});
@@ -284,4 +297,59 @@ $('restoreFile').addEventListener('change',async e=>{const f=e.target.files[0];i
 $('makePlan').addEventListener('click',()=>{});renderLogs();renderProgress();renderNutrition();
 })();
 </script>
+
+<script>
+document.addEventListener('change',function(e){
+ if(e.target.closest && e.target.closest('#anketa')){
+  setTimeout(function(){
+   try{if(typeof renderNutrition==='function')renderNutrition();if(typeof makePlan==='function')makePlan();}catch(err){console.error(err);}
+  },100);
+ }
+});
+</script>
+
+<script>
+(function(){
+ function refreshNutritionFromProfile(){
+  try{
+   if(typeof profile!=='undefined' && typeof renderNutrition==='function'){
+    const goal=document.getElementById('nutritionGoal');
+    if(goal) profile.goal=goal.value;
+    renderNutrition();
+   }
+  }catch(e){console.warn('Nutrition refresh:',e);}
+ }
+ document.addEventListener('change',function(e){
+  if(e.target.closest && e.target.closest('#anketa')){
+   setTimeout(refreshNutritionFromProfile,150);
+  }
+ });
+ document.addEventListener('click',function(e){
+  const button=e.target.closest && e.target.closest('#saveProfile,#saveAnketa,#saveQuestionnaire');
+  if(button)setTimeout(refreshNutritionFromProfile,200);
+ });
+ const goal=document.getElementById('nutritionGoal');
+ if(goal){
+  goal.addEventListener('change',refreshNutritionFromProfile);
+  goal.addEventListener('input',refreshNutritionFromProfile);
+ }
+})();
+</script>
 </body></html>
+<script>
+(function(){
+ function syncGoal(){
+  const sel=document.getElementById('nutritionGoal');
+  if(!sel)return;
+  const old=sel.value;
+  sel.addEventListener('change',function(){
+   try{
+    if(typeof profile!=='undefined'){profile.goal=sel.value; if(typeof write==='function'&&typeof KEYS!=='undefined')write(KEYS.profile,profile);}
+    if(typeof renderNutrition==='function')renderNutrition();
+    if(typeof makePlan==='function')makePlan();
+   }catch(e){console.error('Goal sync:',e);}
+  });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',syncGoal);else syncGoal();
+})();
+</script>
